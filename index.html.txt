@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>恒爱家园 - 做失独老人爱的续航人</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "微软雅黑", sans-serif;
+        }
+        body {
+            line-height: 1.8;
+            color: #333;
+        }
+        .header {
+            background-color: #C8102E;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .nav {
+            background-color: #f4f4f4;
+            padding: 15px;
+            text-align: center;
+        }
+        .nav a {
+            margin: 0 12px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .nav a:hover {
+            color: #C8102E;
+        }
+
+        /* 轮播：支持8页 */
+        .banner {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1.2s ease;
+            background-size: cover;
+            background-position: center;
+        }
+        .slide.active {
+            opacity: 1;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 30px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .section h2 {
+            color: #C8102E;
+            margin-bottom: 20px;
+            font-size: 22px;
+            border-left: 5px solid #C8102E;
+            padding-left: 12px;
+        }
+        .section p {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>恒爱家园</h1>
+        <p>做失独老人爱的续航人 | 华北电力大学挑战杯项目</p >
+    </div>
+
+    <div class="nav">
+        <a href=" ">首页轮播</a >
+        <a href="#intro">项目简介</a >
+        <a href="#org">机构介绍</a >
+        <a href="#4a">4A服务体系</a >
+        <a href="#logic">服务逻辑</a >
+        <a href="#scene">落地场景</a >
+        <a href="#result">项目成果</a >
+    </div>
+
+    <!-- 8页轮播全部放上 -->
+    <div class="banner" id="home">
+        <div class="slide active" style="background-image: url('images/banner1.jpg')"></div>
+        <div class="slide" style="background-image: url('images/banner2.jpg')"></div>
+        <div class="slide" style="background-image: url('images/banner3.jpg')"></div>
+        <div class="slide" style="background-image: url('images/banner4.jpg')"></div>
+        <div class="slide" style="background-image: url('images/banner5.jpg')"></div>
+        <div class="slide" style="background-image: url('images/banner6.jpg')"></div>
+        <div class="slide" style="background-image: url('images/banner7.jpg')"></div>
+        <div class="slide" style="background-image: url('images/banner8.jpg')"></div>
+    </div>
+
+    <div class="container">
+
+        <div class="section" id="intro">
+            <h2>项目简介</h2>
+            <p>项目名称：恒爱家园</p >
+            <p>项目定位：做失独老人爱的续航人</p >
+            <p>所属单位：华北电力大学</p >
+            <p>赛事赛道：挑战杯·现代服务与社会治理</p >
+        </div>
+
+        <div class="section" id="org">
+            <h2>机构介绍</h2>
+            <p>河北省最早专注计生特殊家庭服务的公益机构</p >
+            <p>2013年启动，13年深耕失独家庭帮扶</p >
+            <p>民政部专业社会工作示范单位</p >
+            <p>全国计生特殊家庭服务试点基地</p >
+        </div>
+
+        <div class="section" id="4a">
+            <h2>4A 全方位帮扶体系</h2>
+            <p> 评估（Assessment）：科学评估老人真实需求</p >
+            <p> 协同（Alliance）：政府、社会、学校多方联动</p >
+            <p> 行动（Action）：医养结合、心理慰藉、结对帮扶</p >
+            <p> 陪伴（Accompany）：长期跟进，闭环服务</p >
+        </div>
+
+        <div class="section" id="logic">
+            <h2>服务逻辑：从内唤醒 + 从外塑造</h2>
+            <p>【从内唤醒自生力】</p >
+            <p>心理疏导、重建信心、走出创伤</p >
+            <p>【从外塑造支撑体系】</p >
+            <p>整合医疗、政策、社区、志愿资源</p >
+        </div>
+
+        <div class="section" id="scene">
+            <h2>关键落地场景</h2>
+            <p> 社会合作：多元联合支持体系</p >
+            <p> 先锋试点：可复制的服务模式</p >
+            <p> 爱心传递：志愿者结对陪伴</p >
+            <p> 重生赋能：重建社会联结</p >
+        </div>
+
+        <div class="section" id="result">
+            <h2>项目成果</h2>
+            <p> 服务时长：13年</p >
+            <p> 帮扶失独老人：3550户</p >
+            <p> 覆盖地区：保定、唐山、石家庄等</p >
+            <p> 模式成果：4A体系全国示范推广</p >
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>© 2026 恒爱家园项目组 · 华北电力大学 · 公益展示</p >
+    </div>
+
+    <script>
+        let idx = 0;
+        const slides = document.querySelectorAll('.slide');
+        setInterval(() => {
+            slides[idx].classList.remove('active');
+            idx = (idx + 1) % slides.length;
+            slides[idx].classList.add('active');
+        }, 3500);
+    </script>
+
+</body>
+</html>
