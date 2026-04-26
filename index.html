@@ -14,6 +14,7 @@
         body {
             line-height: 1.8;
             color: #333;
+            background-color: #f9f9f9;
         }
         .header {
             background-color: #C8102E;
@@ -36,12 +37,13 @@
             color: #C8102E;
         }
 
-        /* 轮播：支持8页 */
+        /* 轮播容器：灰色底色，留白区域美观 */
         .banner {
             width: 100%;
             height: 400px;
             position: relative;
             overflow: hidden;
+            background-color: #eee; /* 留白底色 */
         }
         .slide {
             width: 100%;
@@ -51,20 +53,26 @@
             left: 0;
             opacity: 0;
             transition: opacity 1.2s ease;
-            background-size: cover;
+
+            /* 核心：完整显示图片，不裁剪、不变形、自动留白 */
+            background-size: contain;
             background-position: center;
+            background-repeat: no-repeat;
         }
         .slide.active {
             opacity: 1;
         }
 
+        /* 板块两列布局 */
         .container {
             max-width: 1100px;
             margin: 40px auto;
             padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
         }
         .section {
-            margin-bottom: 40px;
             padding: 30px;
             border: 1px solid #eee;
             border-radius: 10px;
@@ -89,10 +97,49 @@
             padding: 25px;
             margin-top: 50px;
         }
+
+        /* 手机端自动变回一行 */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .nav a {
+                display: inline-block;
+                margin: 5px 8px;
+            }
+            .banner {
+                height: 240px;
+            }
+        }
+
+        /* 微信跳转提示样式 */
+        .wechat-tip {
+            display: none;
+            text-align: center;
+            padding: 50px 20px;
+            font-family: "微软雅黑", sans-serif;
+        }
     </style>
 </head>
 
 <body>
+    <!-- 微信浏览器跳转提示 -->
+    <script>
+        function isWeChat() {
+            return navigator.userAgent.toLowerCase().includes('micromessenger');
+        }
+        if (isWeChat()) {
+            document.write(`
+                <div class="wechat-tip" style="display:block;">
+                    <h2 style="color:#C8102E; margin-bottom:20px;">恒爱家园 - 挑战杯项目</h2>
+                    <p style="color:#666; margin:20px 0; font-size:18px;">微信内置浏览器无法正常打开此页面</p >
+                    <p style="color:red; font-weight:bold; font-size:20px; margin:20px 0;">请点击右上角 ··· → 选择【在浏览器中打开】</p >
+                    <p style="margin-top:30px; color:#999; font-size:16px;">推荐使用华为/小米/苹果自带浏览器，体验更流畅</p >
+                </div>
+            `);
+            document.execCommand('Stop');
+        }
+    </script>
 
     <div class="header">
         <h1>恒爱家园</h1>
@@ -109,7 +156,7 @@
         <a href="#result">项目成果</a >
     </div>
 
-    <!-- 8页轮播全部放上 -->
+    <!-- 8页轮播 -->
     <div class="banner" id="home">
         <div class="slide active" style="background-image: url('images/banner1.jpg')"></div>
         <div class="slide" style="background-image: url('images/banner2.jpg')"></div>
@@ -122,7 +169,6 @@
     </div>
 
     <div class="container">
-
         <div class="section" id="intro">
             <h2>项目简介</h2>
             <p>项目名称：恒爱家园</p >
@@ -141,10 +187,10 @@
 
         <div class="section" id="4a">
             <h2>4A 全方位帮扶体系</h2>
-            <p> 评估（Assessment）：科学评估老人真实需求</p >
-            <p> 协同（Alliance）：政府、社会、学校多方联动</p >
-            <p> 行动（Action）：医养结合、心理慰藉、结对帮扶</p >
-            <p> 陪伴（Accompany）：长期跟进，闭环服务</p >
+            <p>评估（Assessment）：科学评估老人真实需求</p >
+            <p>协同（Alliance）：政府、社会、学校多方联动</p >
+            <p>行动（Action）：医养结合、心理慰藉、结对帮扶</p >
+            <p>陪伴（Accompany）：长期跟进，闭环服务</p >
         </div>
 
         <div class="section" id="logic">
@@ -157,20 +203,19 @@
 
         <div class="section" id="scene">
             <h2>关键落地场景</h2>
-            <p> 社会合作：多元联合支持体系</p >
-            <p> 先锋试点：可复制的服务模式</p >
-            <p> 爱心传递：志愿者结对陪伴</p >
-            <p> 重生赋能：重建社会联结</p >
+            <p>社会合作：多元联合支持体系</p >
+            <p>先锋试点：可复制的服务模式</p >
+            <p>爱心传递：志愿者结对陪伴</p >
+            <p>重生赋能：重建社会联结</p >
         </div>
 
         <div class="section" id="result">
             <h2>项目成果</h2>
-            <p> 服务时长：13年</p >
-            <p> 帮扶失独老人：3550户</p >
-            <p> 覆盖地区：保定、唐山、石家庄等</p >
-            <p> 模式成果：4A体系全国示范推广</p >
+            <p>服务时长：13年</p >
+            <p>帮扶失独老人：3550户</p >
+            <p>覆盖地区：保定、唐山、石家庄等</p >
+            <p>模式成果：4A体系全国示范推广</p >
         </div>
-
     </div>
 
     <div class="footer">
@@ -186,6 +231,5 @@
             slides[idx].classList.add('active');
         }, 3500);
     </script>
-
 </body>
 </html>
